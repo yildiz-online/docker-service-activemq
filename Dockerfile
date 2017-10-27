@@ -2,7 +2,7 @@ FROM openjdk:8-jre
 
 LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
-ENV ACTIVEMQ_VERSION 5.15.1
+ENV ACTIVEMQ_VERSION 5.15.2
 
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 
