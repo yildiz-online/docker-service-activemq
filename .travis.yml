@@ -11,4 +11,3 @@ after_success:
   - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
     docker push moussavdb/application-activemq:latest;
     docker push moussavdb/application-activemq:build_$TRAVIS_BUILD_NUMBER;
-© 2018 GitHub, Inc.
