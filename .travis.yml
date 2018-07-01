@@ -3,11 +3,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t moussavdb/application-activemq:latest -t moussavdb/application-activemq:build_$TRAVIS_BUILD_NUMBER .
+  - docker build -t moussavdb/service-activemq:latest -t moussavdb/service-activemq:build_$TRAVIS_BUILD_NUMBER .
 script:
-  - docker images moussavdb/application-activemq
+  - docker images moussavdb/service-activemq
   
 after_success:
   - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
-    docker push moussavdb/application-activemq:latest;
-    docker push moussavdb/application-activemq:build_$TRAVIS_BUILD_NUMBER;
+    docker push moussavdb/service-activemq:latest;
+    docker push moussavdb/service-activemq:build_$TRAVIS_BUILD_NUMBER;
