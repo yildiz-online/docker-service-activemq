@@ -6,11 +6,15 @@ ENV ACTIVEMQ_VERSION 5.15.8
 
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 
+RUN curl -o logback-core-1.2.3.jar \
+                "http://central.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar"
+
 RUN curl -fsSL -o activemq.tar.gz \
 		"https://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz" \
     && tar xf activemq.tar.gz -C /usr/src/ \
     && mv /usr/src/$ACTIVEMQ /opt/activemq \
     && cp -r /opt/activemq/conf /opt/activemq/conf_bak \
+    && mv logback-core-1.2.3.jar /opt/activemq/lib/logback-core-1.2.3.jar
     && rm activemq.tar.gz
 
 EXPOSE 8161 61616 5672 61613 1883 61614
