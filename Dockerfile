@@ -4,7 +4,7 @@ LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
 ENV ACTIVEMQ_VERSION 5.15.8
 ENV LOGBACK_VERSION 1.2.3
-ENV SPLUNK_VERSION
+ENV SPLUNK_VERSION 1.6.2
 
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 
@@ -29,6 +29,7 @@ RUN curl -fsSL -o activemq.tar.gz \
     && rm /opt/activemq/lib/optional/log4j-1.2.17.jar \
     && rm activemq.tar.gz
     
+ADD logback.xml /opt/activemq/lib/
 
 EXPOSE 8161 61616 5672 61613 1883 61614
 
