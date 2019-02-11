@@ -1,0 +1,12 @@
+<configuration>
+  <appender name="TCP" class="com.splunk.logging.TcpAppender">
+    <RemoteHost>splunk</RemoteHost>
+    <Port>51515</Port>
+    <layout class="ch.qos.logback.classic.PatternLayout">
+    <pattern>%d{HH:mm:ss.SSS} | %level | %class | %msg%n</pattern>
+    </layout>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="TCP" />
+  </root>
+</configuration>
