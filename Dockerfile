@@ -37,4 +37,4 @@ VOLUME ["/opt/activemq/data", "/opt/activemq/conf"]
 
 WORKDIR /opt/activemq/
 
-CMD ["/opt/activemq/bin/activemq", "console"]
+CMD ["/opt/activemq/bin/activemq", "console", "-Dlogback.configurationFile=/opt/activemq/lib/logback.xml"]
