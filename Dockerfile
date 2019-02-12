@@ -29,7 +29,7 @@ RUN curl -fsSL -o activemq.tar.gz \
     && rm /opt/activemq/lib/optional/log4j-1.2.17.jar \
     && rm activemq.tar.gz
     
-#ADD logback.xml /opt/activemq/lib/
+ADD logback.xml /opt/activemq/lib/logback.xml
 
 EXPOSE 8161 61616 5672 61613 1883 61614
 
