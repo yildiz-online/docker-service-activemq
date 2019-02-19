@@ -38,3 +38,5 @@ VOLUME ["/opt/activemq/data", "/opt/activemq/conf"]
 WORKDIR /opt/activemq/
 
 CMD ["/opt/activemq/bin/activemq", "console", "-Dlogback.configurationFile=/opt/activemq/lib/logback.xml"]
+
+HEALTHCHECK --interval=1m CMD curl -f http://localhost:8161/ || exit 1
