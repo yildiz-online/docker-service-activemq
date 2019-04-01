@@ -2,7 +2,7 @@ FROM moussavdb/runtime-java
 
 LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
-ENV ACTIVEMQ_VERSION 5.15.8
+ENV ACTIVEMQ_VERSION 5.15.9
 ENV LOGBACK_VERSION 1.2.3
 ENV SPLUNK_VERSION 1.6.2
 
