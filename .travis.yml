@@ -9,6 +9,7 @@ before_install:
   - docker build -t moussavdb/service-activemq:latest -t moussavdb/service-activemq:build_$TRAVIS_BUILD_NUMBER .
 script:
   - docker images moussavdb/service-activemq
+  - export DOCKER_PASSWORD=$(curl -sS -H "X-Vault-Token: $VAULT_TOKEN" -X GET https://vault.yildiz-games.be/v1/kv/yildiz-engine) | jq -r '.data.DOCKERHUB_PASSWORD')
   
 after_success:
   - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
