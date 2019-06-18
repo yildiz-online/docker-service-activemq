@@ -6,7 +6,9 @@ ENV ACTIVEMQ_VERSION 5.15.9
 
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 
+RUN cd /usr
 RUN ls -l
+RUN cd ..
 		
 RUN curl -fsSL -o activemq.tar.gz \
 		"https://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz" \
