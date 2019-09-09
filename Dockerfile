@@ -2,7 +2,7 @@ FROM moussavdb/runtime-java
 
 LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
-ENV ACTIVEMQ_VERSION 5.15.9
+ENV ACTIVEMQ_VERSION 5.15.10
 
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 
