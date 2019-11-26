@@ -2,16 +2,16 @@ FROM moussavdb/runtime-java
 
 LABEL maintainer="Grégory Van den Borre vandenborre.gregory@hotmail.fr"
 
-ENV ACTIVEMQ_VERSION 5.15.10
+ENV ACTIVEMQ_VERSION 5.15.11
 
-ENV ACTIVEMQ apache-activemq-5.15.10
+ENV ACTIVEMQ apache-activemq-5.15.11
 
 RUN mkdir /usr/src
 
 RUN curl -fsSL -o activemq.tar.gz \
-		"https://archive.apache.org/dist/activemq/5.15.10/apache-activemq-5.15.10-bin.tar.gz" \
+		"https://archive.apache.org/dist/activemq/5.15.11/apache-activemq-5.15.11-bin.tar.gz" \
     && tar xf activemq.tar.gz -C /usr/src/ \
-    && mv /usr/src/apache-activemq-5.15.10 /opt/activemq \
+    && mv /usr/src/apache-activemq-5.15.11 /opt/activemq \
     && cp -r /opt/activemq/conf /opt/activemq/conf_bak \
     && rm activemq.tar.gz
 
